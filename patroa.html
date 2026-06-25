@@ -336,7 +336,7 @@ html, body {
 }
 .btn-confirm {
   flex:2; padding:12px; border-radius:var(--r);
-  border:none; background:var(--accent); color:#0c0c0e;
+  border:none; background:var(--accent); color:#0f0a12;
   font-size:13px; font-weight:700; cursor:pointer;
   font-family:'Syne',sans-serif; letter-spacing:0.04em;
 }
@@ -360,7 +360,7 @@ html, body {
   cursor:pointer; font-family:'DM Mono',monospace;
   letter-spacing:0.04em; transition:all .15s;
 }
-.task-tab-btn.on { background:var(--accent); color:#0c0c0e; border-color:var(--accent); }
+.task-tab-btn.on { background:var(--accent); color:#0f0a12; border-color:var(--accent); }
 
 .task-item {
   display:flex; align-items:flex-start; gap:10px;
@@ -403,7 +403,7 @@ html, body {
 .add-task-btn {
   font-size:18px; font-weight:700; padding:9px 16px;
   border-radius:var(--r-sm); border:none;
-  background:var(--accent); color:#0c0c0e; cursor:pointer;
+  background:var(--accent); color:#0f0a12; cursor:pointer;
 }
 
 /* FINANCEIRO */
@@ -447,7 +447,7 @@ input[type="date"].lan-inp, input[type="time"].lan-inp { font-size:11px; padding
 .lan-btn {
   width:100%; font-size:13px; font-weight:700; padding:11px;
   border-radius:var(--r-sm); border:none;
-  background:var(--accent); color:#0c0c0e; cursor:pointer;
+  background:var(--accent); color:#0f0a12; cursor:pointer;
   font-family:'Syne',sans-serif; letter-spacing:0.04em; margin-top:4px;
 }
 .gasto-item { display:flex; align-items:flex-start; gap:8px; padding:10px 0; border-bottom:1px solid var(--border); }
@@ -491,7 +491,7 @@ input[type="date"].lan-inp, input[type="time"].lan-inp { font-size:11px; padding
   letter-spacing:0.04em; margin-top:10px; transition:all .2s;
 }
 .save-btn:hover { background:var(--surface2); }
-.save-btn.primary { background:var(--accent); color:#0c0c0e; border-color:var(--accent); }
+.save-btn.primary { background:var(--accent); color:#0f0a12; border-color:var(--accent); }
 
 /* MANTRA */
 .mantra-section { margin-bottom:18px; }
@@ -505,7 +505,7 @@ input[type="date"].lan-inp, input[type="time"].lan-inp { font-size:11px; padding
 /* UTILS */
 .empty { font-size:13px; color:var(--muted); padding:10px 0; }
 .today-badge {
-  display:inline-block; background:var(--accent); color:#0c0c0e;
+  display:inline-block; background:var(--accent); color:#0f0a12;
   font-size:10px; font-weight:700; padding:3px 8px; border-radius:100px;
   font-family:'DM Mono',monospace; letter-spacing:0.06em;
   margin-left:8px; vertical-align:middle;
@@ -555,7 +555,7 @@ input[type="date"].lan-inp, input[type="time"].lan-inp { font-size:11px; padding
 .habit-add-btn {
   font-size:18px; font-weight:700; padding:8px 14px;
   border-radius:var(--r-sm); border:none;
-  background:var(--accent); color:#0c0c0e; cursor:pointer;
+  background:var(--accent); color:#0f0a12; cursor:pointer;
 }
 .habit-edit-txt {
   font-size:13px; color:var(--text); flex:1;
@@ -625,7 +625,7 @@ input[type="date"].lan-inp, input[type="time"].lan-inp { font-size:11px; padding
 
   <div class="day-done-banner" id="day-done-banner">
     <div class="day-done-icon">
-      <svg viewBox="0 0 16 16" fill="none"><path d="M2 8l4 4 8-8" stroke="#0c0c0e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <svg viewBox="0 0 16 16" fill="none"><path d="M2 8l4 4 8-8" stroke="#0f0a12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </div>
     <div class="day-done-txt">
       <div class="day-done-lbl">DIA FECHADO</div>
@@ -1072,7 +1072,7 @@ function renderHSection(key) {
         </div>
         <span class="htag ${tc}" style="cursor:pointer" onclick="cycleTag('${key}',${i})">${tl}</span>`;
     } else {
-      row.innerHTML = `<div class="chk${done?' on':''}"><svg viewBox="0 0 11 8" fill="none"><path d="M1 4l3 3 6-6" stroke="#0c0c0e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div style="flex:1"><div class="htxt${done?' on':''}">${h.t}</div><div class="hwhy">${h.w}</div></div><span class="htag ${tc}">${tl}</span>`;
+      row.innerHTML = `<div class="chk${done?' on':''}"><svg viewBox="0 0 11 8" fill="none"><path d="M1 4l3 3 6-6" stroke="#0f0a12" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div style="flex:1"><div class="htxt${done?' on':''}">${h.t}</div><div class="hwhy">${h.w}</div></div><span class="htag ${tc}">${tl}</span>`;
     }
     el.appendChild(row);
   });
@@ -1280,7 +1280,7 @@ function renderAgendaEvents() {
       </div>
       <div class="event-actions">
         <div class="event-chk${ev.done?' on':''}" onclick="${toggleFn}">
-          <svg viewBox="0 0 11 8" fill="none"><path d="M1 4l3 3 6-6" stroke="#0c0c0e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg viewBox="0 0 11 8" fill="none"><path d="M1 4l3 3 6-6" stroke="#0f0a12" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
         <button style="background:none;border:none;color:var(--muted2);cursor:pointer;font-size:14px;padding:0" onclick="${deleteFn}">×</button>
       </div>`;
@@ -1406,7 +1406,7 @@ function renderClItems() {
       ev.checklist[i].done = !ev.checklist[i].done;
       save(); renderClItems(); renderAgendaEvents();
     };
-    row.innerHTML = `<div class="chk${c.done?' on':''}"><svg viewBox="0 0 11 8" fill="none"><path d="M1 4l3 3 6-6" stroke="#0c0c0e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="cl-txt${c.done?' on':''}">${c.t}</div>`;
+    row.innerHTML = `<div class="chk${c.done?' on':''}"><svg viewBox="0 0 11 8" fill="none"><path d="M1 4l3 3 6-6" stroke="#0f0a12" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="cl-txt${c.done?' on':''}">${c.t}</div>`;
     el.appendChild(row);
   });
 }
@@ -1903,7 +1903,7 @@ function buildTaskEl(t) {
   item.innerHTML = `
     <div class="task-pri-dot" style="background:${PRI_COLOR[pri]}" title="${PRI_LABEL[pri]}"></div>
     <div class="chk${t.done?' on':''}" onclick="toggleTask('${currentTaskTab}','${t.id}')">
-      <svg viewBox="0 0 11 8" fill="none"><path d="M1 4l3 3 6-6" stroke="#0c0c0e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <svg viewBox="0 0 11 8" fill="none"><path d="M1 4l3 3 6-6" stroke="#0f0a12" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </div>
     <div class="task-body" onclick="toggleTask('${currentTaskTab}','${t.id}')">
       <div class="task-title${t.done?' done':''}">${t.title}</div>
@@ -2049,14 +2049,14 @@ function renderSemana() {
 // ═══════════════════════════════════════════════════════ FINANCEIRO
 let finMonth = new Date().toISOString().slice(0,7);
 const CAT_COLORS = {
-  'Mercado':'#c8f542','Comer Fora':'#c8f542','iFood':'#c8f542',
-  'Academia':'#4da6ff','Jiu Jitsu':'#4da6ff','Médico/Consulta':'#4da6ff','Farmácia':'#4da6ff',
-  'Gasolina':'#fbbf24','Uber/99':'#fbbf24','Metro/Bus':'#fbbf24',
-  'Aluguel':'#a78bfa','Contas':'#a78bfa','Internet':'#a78bfa',
-  'Bar/Balada':'#ff6b6b','Rolê/Saída':'#ff6b6b','Cinema/Evento':'#ff6b6b',
-  'Assinaturas':'#64748b','Educação':'#64748b','Cuidados Pessoais':'#64748b',
+  'Mercado':'#f472b6','Comer Fora':'#f472b6','iFood':'#f472b6',
+  'Academia':'#c084fc','Jiu Jitsu':'#c084fc','Médico/Consulta':'#c084fc','Farmácia':'#c084fc',
+  'Gasolina':'#fcd34d','Uber/99':'#fcd34d','Metro/Bus':'#fcd34d',
+  'Aluguel':'#f9a8d4','Contas':'#f9a8d4','Internet':'#f9a8d4',
+  'Bar/Balada':'#fb7185','Rolê/Saída':'#fb7185','Cinema/Evento':'#fb7185',
+  'Assinaturas':'#94a3b8','Educação':'#94a3b8','Cuidados Pessoais':'#94a3b8',
   'Parcelado':'#f97316','Dívidas':'#f97316',
-  'Extra/Emergência':'#94a3b8','Outros':'#94a3b8',
+  'Extra/Emergência':'#cbd5e1','Outros':'#cbd5e1',
 };
 
 const CAT_MAE = {
