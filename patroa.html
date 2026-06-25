@@ -21,13 +21,13 @@
   --text: #f5f0f8;
   --muted: #c4a8d0;
   --muted2: #6b5278;
-  --accent: #f472b6;
-  --accent-dim: rgba(244,114,182,0.13);
-  --accent-dim2: rgba(244,114,182,0.06);
-  --blue: #c084fc;
-  --blue-dim: rgba(192,132,252,0.13);
-  --purple: #f9a8d4;
-  --purple-dim: rgba(249,168,212,0.12);
+  --accent: #ffb6c1;
+  --accent-dim: rgba(255,182,193,0.13);
+  --accent-dim2: rgba(255,182,193,0.06);
+  --blue: #d8a7ca;
+  --blue-dim: rgba(216,167,202,0.13);
+  --purple: #ffd1dc;
+  --purple-dim: rgba(255,209,220,0.12);
   --red: #fb7185;
   --red-dim: rgba(251,113,133,0.1);
   --amber: #fcd34d;
@@ -708,24 +708,25 @@ input[type="date"].lan-inp, input[type="time"].lan-inp { font-size:11px; padding
           <option value="Mercado">Mercado</option>
           <option value="Comer Fora">Comer Fora</option>
           <option value="iFood">iFood</option>
-          <option value="Cafezinho">Cafezinho</option>
+          <option value="Lanche/Café">Lanche/Café</option>
         </optgroup>
-        <optgroup label="— Beleza">
-          <option value="Salão/Cabelo">Salão/Cabelo</option>
-          <option value="Estética/Unhas">Estética/Unhas</option>
-          <option value="Maquiagem">Maquiagem</option>
+        <optgroup label="— Cuidados Pessoais">
+          <option value="Unhas">Unhas</option>
+          <option value="Cabelo/Salão">Cabelo/Salão</option>
           <option value="Skincare">Skincare</option>
+          <option value="Maquiagem">Maquiagem</option>
           <option value="Perfume">Perfume</option>
         </optgroup>
         <optgroup label="— Saúde">
+          <option value="Laser">Laser</option>
           <option value="Academia/Pilates">Academia/Pilates</option>
           <option value="Médico/Consulta">Médico/Consulta</option>
           <option value="Farmácia">Farmácia</option>
         </optgroup>
-        <optgroup label="— Moda">
-          <option value="Roupas">Roupas</option>
-          <option value="Calçados">Calçados</option>
-          <option value="Acessórios">Acessórios</option>
+        <optgroup label="— Educação">
+          <option value="Faculdade">Faculdade</option>
+          <option value="Curso">Curso</option>
+          <option value="Material">Material</option>
         </optgroup>
         <optgroup label="— Transporte">
           <option value="Gasolina">Gasolina</option>
@@ -744,10 +745,8 @@ input[type="date"].lan-inp, input[type="time"].lan-inp { font-size:11px; padding
         </optgroup>
         <optgroup label="— Outros">
           <option value="Assinaturas">Assinaturas</option>
-          <option value="Educação">Educação</option>
-          <option value="Parcelado">Parcelado</option>
+          <option value="Roupas/Acessórios">Roupas/Acessórios</option>
           <option value="Dívidas">Dívidas</option>
-          <option value="Extra/Emergência">Extra/Emergência</option>
           <option value="Outros">Outros</option>
         </optgroup>
         <optgroup label="— Receita">
@@ -2060,29 +2059,27 @@ function renderSemana() {
 // ═══════════════════════════════════════════════════════ FINANCEIRO
 let finMonth = new Date().toISOString().slice(0,7);
 const CAT_COLORS = {
-  'Mercado':'#f472b6','Comer Fora':'#f472b6','iFood':'#f472b6','Cafezinho':'#f472b6',
-  'Salão/Cabelo':'#e879f9','Estética/Unhas':'#e879f9','Maquiagem':'#e879f9','Skincare':'#e879f9','Perfume':'#e879f9',
-  'Academia/Pilates':'#c084fc','Médico/Consulta':'#c084fc','Farmácia':'#c084fc',
-  'Roupas':'#fb7185','Calçados':'#fb7185','Acessórios':'#fb7185',
+  'Mercado':'#ffb6c1','Comer Fora':'#ffb6c1','iFood':'#ffb6c1','Lanche/Café':'#ffb6c1',
+  'Unhas':'#e879f9','Cabelo/Salão':'#e879f9','Skincare':'#e879f9','Maquiagem':'#e879f9','Perfume':'#e879f9',
+  'Laser':'#d8a7ca','Academia/Pilates':'#d8a7ca','Médico/Consulta':'#d8a7ca','Farmácia':'#d8a7ca',
+  'Faculdade':'#a78bfa','Curso':'#a78bfa','Material':'#a78bfa',
   'Gasolina':'#fcd34d','Uber/99':'#fcd34d','Metro/Bus':'#fcd34d',
-  'Aluguel':'#f9a8d4','Contas':'#f9a8d4','Internet':'#f9a8d4',
-  'Rolê/Saída':'#a78bfa','Cinema/Evento':'#a78bfa','Viagem':'#a78bfa',
-  'Assinaturas':'#94a3b8','Educação':'#94a3b8',
-  'Parcelado':'#f97316','Dívidas':'#f97316',
-  'Extra/Emergência':'#cbd5e1','Outros':'#cbd5e1',
+  'Aluguel':'#ffd1dc','Contas':'#ffd1dc','Internet':'#ffd1dc',
+  'Rolê/Saída':'#fb7185','Cinema/Evento':'#fb7185','Viagem':'#fb7185',
+  'Assinaturas':'#94a3b8','Roupas/Acessórios':'#94a3b8',
+  'Dívidas':'#f97316','Outros':'#cbd5e1',
 };
 
 const CAT_MAE = {
-  'Mercado':'Alimentação','Comer Fora':'Alimentação','iFood':'Alimentação','Cafezinho':'Alimentação',
-  'Salão/Cabelo':'Beleza','Estética/Unhas':'Beleza','Maquiagem':'Beleza','Skincare':'Beleza','Perfume':'Beleza',
-  'Academia/Pilates':'Saúde','Médico/Consulta':'Saúde','Farmácia':'Saúde',
-  'Roupas':'Moda','Calçados':'Moda','Acessórios':'Moda',
+  'Mercado':'Alimentação','Comer Fora':'Alimentação','iFood':'Alimentação','Lanche/Café':'Alimentação',
+  'Unhas':'Cuidados Pessoais','Cabelo/Salão':'Cuidados Pessoais','Skincare':'Cuidados Pessoais','Maquiagem':'Cuidados Pessoais','Perfume':'Cuidados Pessoais',
+  'Laser':'Saúde','Academia/Pilates':'Saúde','Médico/Consulta':'Saúde','Farmácia':'Saúde',
+  'Faculdade':'Educação','Curso':'Educação','Material':'Educação',
   'Gasolina':'Transporte','Uber/99':'Transporte','Metro/Bus':'Transporte',
   'Aluguel':'Moradia','Contas':'Moradia','Internet':'Moradia',
   'Rolê/Saída':'Lazer','Cinema/Evento':'Lazer','Viagem':'Lazer',
-  'Assinaturas':'Assinaturas','Educação':'Educação',
-  'Parcelado':'Dívidas','Dívidas':'Dívidas',
-  'Extra/Emergência':'Extra/Emergência','Outros':'Outros',
+  'Assinaturas':'Assinaturas','Roupas/Acessórios':'Roupas/Acessórios',
+  'Dívidas':'Dívidas','Outros':'Outros',
 };
 
 function finNavMonth(delta) {
