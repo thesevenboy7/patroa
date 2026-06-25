@@ -19,8 +19,8 @@
   --border: rgba(255,255,255,0.07);
   --border2: rgba(255,255,255,0.13);
   --text: #f5f0f8;
-  --muted: #8b7095;
-  --muted2: #4e3d58;
+  --muted: #c4a8d0;
+  --muted2: #6b5278;
   --accent: #f472b6;
   --accent-dim: rgba(244,114,182,0.13);
   --accent-dim2: rgba(244,114,182,0.06);
@@ -696,7 +696,7 @@ input[type="date"].lan-inp, input[type="time"].lan-inp { font-size:11px; padding
   <div class="card">
     <div class="card-lbl">Novo lançamento</div>
     <div class="lan-form-grid">
-      <input class="lan-inp lan-form-full" id="lan-desc" placeholder="Descrição (ex: Academia, Mercado...)" />
+      <input class="lan-inp lan-form-full" id="lan-desc" placeholder="Descrição" />
       <input class="lan-inp" id="lan-val" type="number" placeholder="Valor R$" step="0.01"/>
       <input class="lan-inp" id="lan-data" type="date"/>
       <select class="lan-sel" id="lan-tipo">
@@ -708,12 +708,24 @@ input[type="date"].lan-inp, input[type="time"].lan-inp { font-size:11px; padding
           <option value="Mercado">Mercado</option>
           <option value="Comer Fora">Comer Fora</option>
           <option value="iFood">iFood</option>
+          <option value="Cafezinho">Cafezinho</option>
+        </optgroup>
+        <optgroup label="— Beleza">
+          <option value="Salão/Cabelo">Salão/Cabelo</option>
+          <option value="Estética/Unhas">Estética/Unhas</option>
+          <option value="Maquiagem">Maquiagem</option>
+          <option value="Skincare">Skincare</option>
+          <option value="Perfume">Perfume</option>
         </optgroup>
         <optgroup label="— Saúde">
-          <option value="Academia">Academia</option>
-          <option value="Jiu Jitsu">Jiu Jitsu</option>
+          <option value="Academia/Pilates">Academia/Pilates</option>
           <option value="Médico/Consulta">Médico/Consulta</option>
           <option value="Farmácia">Farmácia</option>
+        </optgroup>
+        <optgroup label="— Moda">
+          <option value="Roupas">Roupas</option>
+          <option value="Calçados">Calçados</option>
+          <option value="Acessórios">Acessórios</option>
         </optgroup>
         <optgroup label="— Transporte">
           <option value="Gasolina">Gasolina</option>
@@ -726,14 +738,13 @@ input[type="date"].lan-inp, input[type="time"].lan-inp { font-size:11px; padding
           <option value="Internet">Internet</option>
         </optgroup>
         <optgroup label="— Lazer">
-          <option value="Bar/Balada">Bar/Balada</option>
           <option value="Rolê/Saída">Rolê/Saída</option>
           <option value="Cinema/Evento">Cinema/Evento</option>
+          <option value="Viagem">Viagem</option>
         </optgroup>
         <optgroup label="— Outros">
           <option value="Assinaturas">Assinaturas</option>
           <option value="Educação">Educação</option>
-          <option value="Cuidados Pessoais">Cuidados Pessoais</option>
           <option value="Parcelado">Parcelado</option>
           <option value="Dívidas">Dívidas</option>
           <option value="Extra/Emergência">Extra/Emergência</option>
@@ -741,9 +752,9 @@ input[type="date"].lan-inp, input[type="time"].lan-inp { font-size:11px; padding
         </optgroup>
         <optgroup label="— Receita">
           <option value="Salário">Salário</option>
-          <option value="Empresa">Empresa</option>
           <option value="Freelance">Freelance</option>
           <option value="Rendimento">Rendimento</option>
+          <option value="Presente">Presente</option>
         </optgroup>
       </select>
       <select class="lan-sel" id="lan-pag">
@@ -813,7 +824,7 @@ input[type="date"].lan-inp, input[type="time"].lan-inp { font-size:11px; padding
     <div class="modal-title">Novo Evento</div>
     <div class="form-group">
       <div class="form-lbl">Título</div>
-      <input class="form-inp" id="ev-title" placeholder="Ex: Reunião cliente, Pagar tourist tax..." />
+      <input class="form-inp" id="ev-title" placeholder="Título do evento" />
     </div>
     <div class="form-row">
       <div class="form-group" style="flex:1">
@@ -840,7 +851,7 @@ input[type="date"].lan-inp, input[type="time"].lan-inp { font-size:11px; padding
     </div>
     <div class="form-group">
       <div class="form-lbl">Checklist (opcional — um item por linha)</div>
-      <textarea class="form-inp" id="ev-checklist" rows="4" placeholder="Entrar no portal&#10;Selecionar propriedade&#10;Inserir valor&#10;Confirmar pagamento" style="resize:none;line-height:1.6"></textarea>
+      <textarea class="form-inp" id="ev-checklist" rows="4" placeholder="" style="resize:none;line-height:1.6"></textarea>
     </div>
     <div class="modal-btns">
       <button class="btn-cancel" onclick="closeModal('modal-add-event')">Cancelar</button>
@@ -2049,23 +2060,27 @@ function renderSemana() {
 // ═══════════════════════════════════════════════════════ FINANCEIRO
 let finMonth = new Date().toISOString().slice(0,7);
 const CAT_COLORS = {
-  'Mercado':'#f472b6','Comer Fora':'#f472b6','iFood':'#f472b6',
-  'Academia':'#c084fc','Jiu Jitsu':'#c084fc','Médico/Consulta':'#c084fc','Farmácia':'#c084fc',
+  'Mercado':'#f472b6','Comer Fora':'#f472b6','iFood':'#f472b6','Cafezinho':'#f472b6',
+  'Salão/Cabelo':'#e879f9','Estética/Unhas':'#e879f9','Maquiagem':'#e879f9','Skincare':'#e879f9','Perfume':'#e879f9',
+  'Academia/Pilates':'#c084fc','Médico/Consulta':'#c084fc','Farmácia':'#c084fc',
+  'Roupas':'#fb7185','Calçados':'#fb7185','Acessórios':'#fb7185',
   'Gasolina':'#fcd34d','Uber/99':'#fcd34d','Metro/Bus':'#fcd34d',
   'Aluguel':'#f9a8d4','Contas':'#f9a8d4','Internet':'#f9a8d4',
-  'Bar/Balada':'#fb7185','Rolê/Saída':'#fb7185','Cinema/Evento':'#fb7185',
-  'Assinaturas':'#94a3b8','Educação':'#94a3b8','Cuidados Pessoais':'#94a3b8',
+  'Rolê/Saída':'#a78bfa','Cinema/Evento':'#a78bfa','Viagem':'#a78bfa',
+  'Assinaturas':'#94a3b8','Educação':'#94a3b8',
   'Parcelado':'#f97316','Dívidas':'#f97316',
   'Extra/Emergência':'#cbd5e1','Outros':'#cbd5e1',
 };
 
 const CAT_MAE = {
-  'Mercado':'Alimentação','Comer Fora':'Alimentação','iFood':'Alimentação',
-  'Academia':'Saúde','Jiu Jitsu':'Saúde','Médico/Consulta':'Saúde','Farmácia':'Saúde',
+  'Mercado':'Alimentação','Comer Fora':'Alimentação','iFood':'Alimentação','Cafezinho':'Alimentação',
+  'Salão/Cabelo':'Beleza','Estética/Unhas':'Beleza','Maquiagem':'Beleza','Skincare':'Beleza','Perfume':'Beleza',
+  'Academia/Pilates':'Saúde','Médico/Consulta':'Saúde','Farmácia':'Saúde',
+  'Roupas':'Moda','Calçados':'Moda','Acessórios':'Moda',
   'Gasolina':'Transporte','Uber/99':'Transporte','Metro/Bus':'Transporte',
   'Aluguel':'Moradia','Contas':'Moradia','Internet':'Moradia',
-  'Bar/Balada':'Lazer','Rolê/Saída':'Lazer','Cinema/Evento':'Lazer',
-  'Assinaturas':'Assinaturas','Educação':'Educação','Cuidados Pessoais':'Cuidados Pessoais',
+  'Rolê/Saída':'Lazer','Cinema/Evento':'Lazer','Viagem':'Lazer',
+  'Assinaturas':'Assinaturas','Educação':'Educação',
   'Parcelado':'Dívidas','Dívidas':'Dívidas',
   'Extra/Emergência':'Extra/Emergência','Outros':'Outros',
 };
