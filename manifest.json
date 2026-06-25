@@ -1,12 +1,12 @@
 {
-  "name": "Chefe",
-  "short_name": "Chefe",
-  "description": "Sistema pessoal de produtividade",
-  "start_url": "/chefe/",
-  "scope": "/chefe/",
+  "name": "Patroa",
+  "short_name": "Patroa",
+  "description": "Minha rotina pessoal",
+  "start_url": "/patroa/",
+  "scope": "/patroa/",
   "display": "standalone",
-  "background_color": "#0c0c0e",
-  "theme_color": "#0c0c0e",
+  "background_color": "#0f0a12",
+  "theme_color": "#0f0a12",
   "icons": [
     {
       "src": "icon.png",
