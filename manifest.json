@@ -1,0 +1,24 @@
+{
+  "name": "Chefe",
+  "short_name": "Chefe",
+  "description": "Sistema pessoal de produtividade",
+  "start_url": "/chefe/",
+  "scope": "/chefe/",
+  "display": "standalone",
+  "background_color": "#0c0c0e",
+  "theme_color": "#0c0c0e",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
