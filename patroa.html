@@ -708,30 +708,27 @@ input[type="date"].lan-inp, input[type="time"].lan-inp { font-size:11px; padding
           <option value="Mercado">Mercado</option>
           <option value="Comer Fora">Comer Fora</option>
           <option value="iFood">iFood</option>
-          <option value="Lanche/Café">Lanche/Café</option>
         </optgroup>
-        <optgroup label="— Cuidados Pessoais">
-          <option value="Unhas">Unhas</option>
+        <optgroup label="— Beleza">
+          <option value="unha & Sobrancelha">Unha &amp; Sobrancelha</option>
           <option value="Cabelo/Salão">Cabelo/Salão</option>
           <option value="Skincare">Skincare</option>
           <option value="Maquiagem">Maquiagem</option>
-          <option value="Perfume">Perfume</option>
         </optgroup>
         <optgroup label="— Saúde">
-          <option value="Laser">Laser</option>
-          <option value="Academia/Pilates">Academia/Pilates</option>
-          <option value="Médico/Consulta">Médico/Consulta</option>
+          <option value="Academia">Academia</option>
           <option value="Farmácia">Farmácia</option>
+          <option value="Médico/Consulta">Médico/Consulta</option>
         </optgroup>
         <optgroup label="— Educação">
           <option value="Faculdade">Faculdade</option>
           <option value="Curso">Curso</option>
-          <option value="Material">Material</option>
+          <option value="Material Escolar">Material Escolar</option>
         </optgroup>
         <optgroup label="— Transporte">
-          <option value="Gasolina">Gasolina</option>
           <option value="Uber/99">Uber/99</option>
           <option value="Metro/Bus">Metro/Bus</option>
+          <option value="Gasolina">Gasolina</option>
         </optgroup>
         <optgroup label="— Moradia">
           <option value="Aluguel">Aluguel</option>
@@ -739,33 +736,28 @@ input[type="date"].lan-inp, input[type="time"].lan-inp { font-size:11px; padding
           <option value="Internet">Internet</option>
         </optgroup>
         <optgroup label="— Lazer">
+          <option value="Bar/Balada">Bar/Balada</option>
           <option value="Rolê/Saída">Rolê/Saída</option>
           <option value="Cinema/Evento">Cinema/Evento</option>
-          <option value="Viagem">Viagem</option>
         </optgroup>
         <optgroup label="— Outros">
+          <option value="Parcelado">Parcelado</option>
           <option value="Assinaturas">Assinaturas</option>
           <option value="Roupas/Acessórios">Roupas/Acessórios</option>
-          <option value="Dívidas">Dívidas</option>
+          <option value="Presente">Presente</option>
           <option value="Outros">Outros</option>
         </optgroup>
         <optgroup label="— Receita">
           <option value="Salário">Salário</option>
           <option value="Freelance">Freelance</option>
           <option value="Rendimento">Rendimento</option>
-          <option value="Presente">Presente</option>
         </optgroup>
       </select>
       <select class="lan-sel" id="lan-pag">
-        <option value="Cartão de Crédito">Cartão Crédito</option>
+        <option value="Cartão de Crédito">Cartão de Crédito</option>
         <option value="PIX">PIX</option>
         <option value="Dinheiro">Dinheiro</option>
-        <option value="Cartão de Débito">Cartão Débito</option>
-        <option value="Transferência">Transferência</option>
-        <option value="N26">N26</option>
-        <option value="Revolut">Revolut</option>
-        <option value="Wise">Wise</option>
-        <option value="Banco Inter">Banco Inter</option>
+        <option value="Cartão de Débito">Cartão de Débito</option>
       </select>
       <input class="lan-inp lan-form-full" id="lan-obs" placeholder="Observação (opcional)" />
     </div>
@@ -2059,27 +2051,27 @@ function renderSemana() {
 // ═══════════════════════════════════════════════════════ FINANCEIRO
 let finMonth = new Date().toISOString().slice(0,7);
 const CAT_COLORS = {
-  'Mercado':'#ffb6c1','Comer Fora':'#ffb6c1','iFood':'#ffb6c1','Lanche/Café':'#ffb6c1',
-  'Unhas':'#e879f9','Cabelo/Salão':'#e879f9','Skincare':'#e879f9','Maquiagem':'#e879f9','Perfume':'#e879f9',
-  'Laser':'#d8a7ca','Academia/Pilates':'#d8a7ca','Médico/Consulta':'#d8a7ca','Farmácia':'#d8a7ca',
-  'Faculdade':'#a78bfa','Curso':'#a78bfa','Material':'#a78bfa',
-  'Gasolina':'#fcd34d','Uber/99':'#fcd34d','Metro/Bus':'#fcd34d',
+  'Mercado':'#ffb6c1','Comer Fora':'#ffb6c1','iFood':'#ffb6c1',
+  'unha & Sobrancelha':'#e879f9','Cabelo/Salão':'#e879f9','Skincare':'#e879f9','Maquiagem':'#e879f9',
+  'Academia':'#d8a7ca','Farmácia':'#d8a7ca','Médico/Consulta':'#d8a7ca',
+  'Faculdade':'#a78bfa','Curso':'#a78bfa','Material Escolar':'#a78bfa',
+  'Uber/99':'#fcd34d','Metro/Bus':'#fcd34d','Gasolina':'#fcd34d',
   'Aluguel':'#ffd1dc','Contas':'#ffd1dc','Internet':'#ffd1dc',
-  'Rolê/Saída':'#fb7185','Cinema/Evento':'#fb7185','Viagem':'#fb7185',
-  'Assinaturas':'#94a3b8','Roupas/Acessórios':'#94a3b8',
-  'Dívidas':'#f97316','Outros':'#cbd5e1',
+  'Bar/Balada':'#fb7185','Rolê/Saída':'#fb7185','Cinema/Evento':'#fb7185',
+  'Parcelado':'#f97316','Assinaturas':'#94a3b8','Roupas/Acessórios':'#94a3b8',
+  'Presente':'#ffd1dc','Outros':'#cbd5e1',
 };
 
 const CAT_MAE = {
-  'Mercado':'Alimentação','Comer Fora':'Alimentação','iFood':'Alimentação','Lanche/Café':'Alimentação',
-  'Unhas':'Cuidados Pessoais','Cabelo/Salão':'Cuidados Pessoais','Skincare':'Cuidados Pessoais','Maquiagem':'Cuidados Pessoais','Perfume':'Cuidados Pessoais',
-  'Laser':'Saúde','Academia/Pilates':'Saúde','Médico/Consulta':'Saúde','Farmácia':'Saúde',
-  'Faculdade':'Educação','Curso':'Educação','Material':'Educação',
-  'Gasolina':'Transporte','Uber/99':'Transporte','Metro/Bus':'Transporte',
+  'Mercado':'Alimentação','Comer Fora':'Alimentação','iFood':'Alimentação',
+  'unha & Sobrancelha':'Beleza','Cabelo/Salão':'Beleza','Skincare':'Beleza','Maquiagem':'Beleza',
+  'Academia':'Saúde','Farmácia':'Saúde','Médico/Consulta':'Saúde',
+  'Faculdade':'Educação','Curso':'Educação','Material Escolar':'Educação',
+  'Uber/99':'Transporte','Metro/Bus':'Transporte','Gasolina':'Transporte',
   'Aluguel':'Moradia','Contas':'Moradia','Internet':'Moradia',
-  'Rolê/Saída':'Lazer','Cinema/Evento':'Lazer','Viagem':'Lazer',
-  'Assinaturas':'Assinaturas','Roupas/Acessórios':'Roupas/Acessórios',
-  'Dívidas':'Dívidas','Outros':'Outros',
+  'Bar/Balada':'Lazer','Rolê/Saída':'Lazer','Cinema/Evento':'Lazer',
+  'Parcelado':'Parcelado','Assinaturas':'Assinaturas','Roupas/Acessórios':'Roupas/Acessórios',
+  'Presente':'Presente','Outros':'Outros',
 };
 
 function finNavMonth(delta) {
